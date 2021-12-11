@@ -99,8 +99,9 @@ setRowColor = function () {
 
 savedClicked = function(event){
     //NO IDEA WHAT I'M DOING HERE GET HELP
-    saved = event.target;
-    savedArray.push(textAreaEl.textContent);
+    let savedTask = event.target.previousSibling.textContent;
+    console.log(savedTask);
+    savedArray.push(savedTask);
 }
 
 saveTasks = function(){
@@ -128,4 +129,4 @@ loadTasks = function(){
 setTime();
 // loadTasks();
 
-containerEl.addEventListener("click", savedClicked)
+containerEl.addEventListener("click", savedClicked(event));
