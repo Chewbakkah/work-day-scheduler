@@ -18,21 +18,72 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="assets\css\style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
-  <body>
+  <body onload="setTime()">
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container" id="container">
       <!-- Timeblocks go here -->
+      <div class="row" id="R0800">
+        <div class="hour col-1">8AM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
+      <div class="row" id="R0900">
+        <div class="hour col-1">9AM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
+      <div class="row" id="R1000">
+        <div class="hour col-1">10AM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
+      <div class="row" id="R1100">
+        <div class="hour col-1">11AM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
+      <div class="row" id="R1200">
+        <div class="hour col-1">12PM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
+      <div class="row" id="R1300">
+        <div class="hour col-1">1PM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
+      <div class="row" id="R1400">
+        <div class="hour col-1">2PM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
+      <div class="row" id="R1500">
+        <div class="hour col-1">3PM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
+      <div class="row" id="R1600">
+        <div class="hour col-1">4PM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
+      <div class="row" id="R1700">
+        <div class="hour col-1">5PM</div>
+        <textarea class="text col-10"></textarea>
+        <button class="saveBtn col-1"><span class="oi oi-paperclip"></span></button>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets\js\script.js"></script>
   </body>
 </html>
