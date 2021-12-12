@@ -42,12 +42,8 @@ let monthsArray = [
 
 setTime = function () {
   let today = new Date();
-  let date =
-    monthsArray[today.getMonth()] +
-    " " +
-    today.getDate() +
-    ", " +
-    today.getFullYear();
+  console.log(today);
+  let date = monthsArray[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
   let hour = today.getHours();
   let minute = today.getMinutes();
   let second = today.getSeconds();
@@ -99,9 +95,12 @@ setRowColor = function () {
 
 savedClicked = function(event){
     //NO IDEA WHAT I'M DOING HERE GET HELP
-    let savedTask = event.target.previousSibling.textContent;
+    let savedTask = event.target.previousSibling.innerText;
+    // let tryingThis = savedTask.value;
+    let savedTime = event.target.previousSibling.previousSibling.textContent;
+    localStorage.setItem(savedTime, savedTask);
     console.log(savedTask);
-    savedArray.push(savedTask);
+    // savedArray.push(savedTask);
 }
 
 saveTasks = function(){
@@ -129,4 +128,4 @@ loadTasks = function(){
 setTime();
 // loadTasks();
 
-containerEl.addEventListener("click", savedClicked(event));
+saveBtnEl.addEventListener("click", savedClicked);
