@@ -1,7 +1,4 @@
 const getTimeEl = document.querySelector("#currentDay");
-let containerEl = document.querySelector("#container");
-let textAreaEl = document.querySelector(".text");
-let saveBtnEl = document.querySelector(".saveBtn");
 let row0800El = document.querySelector("#R0800");
 let row0900El = document.querySelector("#R0900");
 let row1000El = document.querySelector("#R1000");
@@ -22,7 +19,6 @@ let saveBtn2El = document.querySelector("#time2save");
 let saveBtn3El = document.querySelector("#time3save");
 let saveBtn4El = document.querySelector("#time4save");
 let saveBtn5El = document.querySelector("#time5save");
-let savedArray = [];
 let rowArray = [
   row0800El,
   row0900El,
@@ -49,7 +45,7 @@ let monthsArray = [
   "November",
   "December",
 ];
-
+//set time and calendar at top
 setTime = function () {
   let today = new Date();
   let date =
@@ -90,7 +86,7 @@ setTime = function () {
   setTimeout(setTime, 60000);
   setRowColor();
 };
-
+//set row color, called in time function
 setRowColor = function () {
   let now = new Date();
   let hourNow = now.getHours();
@@ -106,7 +102,7 @@ setRowColor = function () {
     n++;
   }
 };
-
+//save to local storage based on even clicked
 savedClicked8 = function (event) {
   let time8txt = document.querySelector("#time8txt");
   localStorage.setItem("time8", time8txt.textContent);
@@ -147,9 +143,7 @@ savedClicked5 = function (event) {
   let time5txt = document.querySelector("#time5txt");
   localStorage.setItem("time5", time5txt.textContent);
 };
-
-
-
+//load tasks from storage
 loadTasks = function () {
   document.getElementById('time8txt').textContent = localStorage.getItem('time8');
   document.getElementById('time9txt').textContent = localStorage.getItem('time9');
@@ -162,17 +156,11 @@ loadTasks = function () {
   document.getElementById('time4txt').textContent = localStorage.getItem('time4');
   document.getElementById('time5txt').textContent = localStorage.getItem('time5');
 };
-
-// $(".saveBtn").on("click", function () {
-//   var saveHour = $(this).parent().attr("id");
-//   var saveInputText = $(this).siblings(".text").val();
-//   localStorage.setItem(saveHour, saveInputText);
-// });
-
+//executeables
 setTime();
 loadTasks();
-// loadTasks();
 
+//button event listeners
 saveBtn8El.addEventListener("click", savedClicked8);
 saveBtn9El.addEventListener("click", savedClicked9);
 saveBtn10El.addEventListener("click", savedClicked10);
