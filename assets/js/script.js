@@ -13,6 +13,15 @@ let row1500El = document.querySelector("#R1500");
 let row1600El = document.querySelector("#R1600");
 let row1700El = document.querySelector("#R1700");
 let saveBtn8El = document.querySelector("#time8save");
+let saveBtn9El = document.querySelector("#time9save");
+let saveBtn10El = document.querySelector("#time10save");
+let saveBtn11El = document.querySelector("#time11save");
+let saveBtn12El = document.querySelector("#time12save");
+let saveBtn1El = document.querySelector("#time1save");
+let saveBtn2El = document.querySelector("#time2save");
+let saveBtn3El = document.querySelector("#time3save");
+let saveBtn4El = document.querySelector("#time4save");
+let saveBtn5El = document.querySelector("#time5save");
 let savedArray = [];
 let rowArray = [
   row0800El,
@@ -43,7 +52,12 @@ let monthsArray = [
 
 setTime = function () {
   let today = new Date();
-  let date = monthsArray[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
+  let date =
+    monthsArray[today.getMonth()] +
+    " " +
+    today.getDate() +
+    ", " +
+    today.getFullYear();
   let hour = today.getHours();
   let minute = today.getMinutes();
   let second = today.getSeconds();
@@ -93,26 +107,61 @@ setRowColor = function () {
   }
 };
 
-savedClicked8 = function(event){
-let time8txt = document.querySelector("#time8txt");
-localStorage.setItem("time8", time8txt.textContent);
-}
+savedClicked8 = function (event) {
+  let time8txt = document.querySelector("#time8txt");
+  localStorage.setItem("time8", time8txt.textContent);
+};
+savedClicked9 = function (event) {
+  let time9txt = document.querySelector("#time9txt");
+  localStorage.setItem("time9", time9txt.textContent);
+};
+savedClicked10 = function (event) {
+  let time8txt = document.querySelector("#time10txt");
+  localStorage.setItem("time10", time10txt.textContent);
+};
+savedClicked11 = function (event) {
+  let time11txt = document.querySelector("#time11txt");
+  localStorage.setItem("time11", time11txt.textContent);
+};
+savedClicked12 = function (event) {
+  let time12txt = document.querySelector("#time12txt");
+  localStorage.setItem("time12", time12txt.textContent);
+};
+savedClicked1 = function (event) {
+  let time1txt = document.querySelector("#time1txt");
+  localStorage.setItem("time1", time1txt.textContent);
+};
+savedClicked2 = function (event) {
+  let time2txt = document.querySelector("#time2txt");
+  localStorage.setItem("time2", time2txt.textContent);
+};
+savedClicked3 = function (event) {
+  let time3txt = document.querySelector("#time3txt");
+  localStorage.setItem("time3", time3txt.textContent);
+};
+savedClicked4 = function (event) {
+  let time4txt = document.querySelector("#time4txt");
+  localStorage.setItem("time4", time4txt.textContent);
+};
+savedClicked5 = function (event) {
+  let time5txt = document.querySelector("#time5txt");
+  localStorage.setItem("time5", time5txt.textContent);
+};
 
-saveTasks = function(){
-    localStorage.setItem("tasks", JSON.stringify(savedArray));
-}
 
-loadTasks = function(){
-    let savedTasks = localStorage.getItem("tasks");
-    if (!savedTasks){
-        return false;
-    }
-    savedTasks = JSON.parse(savedTasks);
-    for (i=0; i< savedTasks.length; i++){
-        //populate rows with info
-        console.log("you still need to put tasks back in!");
-    }
-}
+
+loadTasks = function () {
+  document.getElementById('time8txt').textContent = localStorage.getItem('time8');
+  document.getElementById('time9txt').textContent = localStorage.getItem('time9');
+  document.getElementById('time10txt').textContent = localStorage.getItem('time10');
+  document.getElementById('time11txt').textContent = localStorage.getItem('time11');
+  document.getElementById('time12txt').textContent = localStorage.getItem('time12');
+  document.getElementById('time1txt').textContent = localStorage.getItem('time1');
+  document.getElementById('time2txt').textContent = localStorage.getItem('time2');
+  document.getElementById('time3txt').textContent = localStorage.getItem('time3');
+  document.getElementById('time4txt').textContent = localStorage.getItem('time4');
+  document.getElementById('time5txt').textContent = localStorage.getItem('time5');
+};
 
 // $(".saveBtn").on("click", function () {
 //   var saveHour = $(this).parent().attr("id");
@@ -121,6 +170,16 @@ loadTasks = function(){
 // });
 
 setTime();
+loadTasks();
 // loadTasks();
 
 saveBtn8El.addEventListener("click", savedClicked8);
+saveBtn9El.addEventListener("click", savedClicked9);
+saveBtn10El.addEventListener("click", savedClicked10);
+saveBtn11El.addEventListener("click", savedClicked11);
+saveBtn12El.addEventListener("click", savedClicked12);
+saveBtn1El.addEventListener("click", savedClicked1);
+saveBtn2El.addEventListener("click", savedClicked2);
+saveBtn3El.addEventListener("click", savedClicked3);
+saveBtn4El.addEventListener("click", savedClicked4);
+saveBtn5El.addEventListener("click", savedClicked5);
