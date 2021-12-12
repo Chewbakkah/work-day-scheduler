@@ -12,6 +12,7 @@ let row1400El = document.querySelector("#R1400");
 let row1500El = document.querySelector("#R1500");
 let row1600El = document.querySelector("#R1600");
 let row1700El = document.querySelector("#R1700");
+let saveBtn8El = document.querySelector("#time8save");
 let savedArray = [];
 let rowArray = [
   row0800El,
@@ -42,7 +43,6 @@ let monthsArray = [
 
 setTime = function () {
   let today = new Date();
-  console.log(today);
   let date = monthsArray[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear();
   let hour = today.getHours();
   let minute = today.getMinutes();
@@ -93,14 +93,9 @@ setRowColor = function () {
   }
 };
 
-savedClicked = function(event){
-    //NO IDEA WHAT I'M DOING HERE GET HELP
-    let savedTask = event.target.previousSibling.innerText;
-    // let tryingThis = savedTask.value;
-    let savedTime = event.target.previousSibling.previousSibling.textContent;
-    localStorage.setItem(savedTime, savedTask);
-    console.log(savedTask);
-    // savedArray.push(savedTask);
+savedClicked8 = function(event){
+let time8txt = document.querySelector("#time8txt");
+localStorage.setItem("time8", time8txt.textContent);
 }
 
 saveTasks = function(){
@@ -128,4 +123,4 @@ loadTasks = function(){
 setTime();
 // loadTasks();
 
-saveBtnEl.addEventListener("click", savedClicked);
+saveBtn8El.addEventListener("click", savedClicked8);
